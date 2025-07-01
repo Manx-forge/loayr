@@ -1,101 +1,50 @@
-# Speech Transcription Data for the Manx Language
+# Loayr: The First Segmented Speech Transcription Dataset for the Manx Language
 
-Loayr is a dataset of Manx Gaelic speech recordings, transcriptions and, where available, English translations. By providing this data, we hope to support researchers, developers, and language enthusiasts who want to improve tools and technologies related to the Manx language.
+Loayr is a dataset of Manx Gaelic speech recordings, transcriptions, and, where available, English translations. It is designed to support research and development in Manx language technologies.
 
-## Why Make Datasets?
+## Subsets
 
-Manx language resources are extremely rare compared to most languages, which makes building language technologies challenging. These evaluation sets provide essential benchmarks to consistently measure and enhance the performance of various language technologies. They can be used for:
+Loayr-v2 contains approximately 15 hours of aligned speech-text data, organised into three subsets:
 
-- **Testing Automatic Speech Recognition (ASR):**  
-  Assess and refine tools that convert spoken Manx into written text. Useful for transcription projects.
+1. **train**  
+   - **Description:** Automatically segmented short utterances (3–5 seconds). May contain segmentation errors.
 
-- **Improving Text-to-Speech (TTS):**  
-  Develop natural, fluent Manx voices, making the language more accessible.
-
-- **Advancing Speech-to-Text (S2T) and Machine Translation (MT):**  
-  Help machines understand and accurately translate spoken or written Manx.
-
-- **Developing Spoken Language Identification (SpokenLID):**  
-  Teach systems to recognise Manx, even in mixed-language audio.
-
-## Statistics
-Loayr-v2 now consists of around 15 hours of speech-text data, organised in three subsets. These are:
-
-1. **train** 
-   - **Description:** Short utterances (3-5 seconds) designed to train ASR systems. This set has been segmented automatically and so may contain errors stemming from this process.
-
-2. **Dev**  
-   - **Description:** Smaller set of short utterances (3-5 seconds) designed to evaluate the ASR training process. This set has been segmented automatically and so may contain errors stemming from this process.
+2. **dev**  
+   - **Description:** A smaller development set of automatically segmented short utterances (3–5 seconds). May contain segmentation errors.
 
 3. **test**  
-   - **Description:** A one-hour test set proportionally sampled from the training set and manually segmented to ensure accuracy. Contains 'ground-truth' examples designed to test the capabilities of various models.
+   - **Description:** A one-hour evaluation set manually segmented to ensure high-quality alignments. Designed for testing and benchmarking.
 
 <p align="center">
   <img src="images/stats.JPG" alt="Loayr overview" width="600">
 </p>
 
-## Where Does the Data Come From?
+## Source and Domain Coverage
 
-The evaluation data is organized into five primary sets, each reflecting a distinct style of spoken Manx. For detailed information about each set, refer to their individual README files:
+The dataset draws from five distinct sources—**Lioarlagh**, **Loayrt Rish**, **Skeealyn Vannin**, **Ynsaghey**, and **Abbyr**—which span a range of domains including read-speech, interviews, spoken dictionaries, instructional content, and archival recordings. These sources reflect both **Revived** and **Traditional** varieties of Manx.
 
-1. [**Lioarlagh** (Books)]  
-   - **Style:** Read-speech  
-   - **Variety:** Traditional  
-   - **Total Duration:** 4.82 hours (train_unaligned), 0.28 hours (test)  
-   - **English Translations:** Small subset (~22 minutes)  
-   - **Eval Use Cases:** ASR, TTS, S2T (Subset), MT (Subset), SpokenLID  
-   - **Description:** Audiobook-style recordings featuring readings of religious texts and folklore. Speech is professionally recorded and generally high-quality. Most texts are transcribed in Manx, with limited English translation available.
+A majority of the data is transcribed in Manx, with English translations available for many files, particularly in conversational and instructional sets. Quality varies by source: most are clean and high-quality, while older archival recordings may feature speaker overlap, noise, or mixed-language content.
 
-2. **Loayrt Rish** (Conversations With)  
-   - **Style:** Conversation/interview  
-   - **Variety:** Revived  
-   - **Total Duration:** 4.36 hours (train_unaligned), 0.27 hours (test)  
-   - **English Translations:** Yes  
-   - **Eval Use Cases:** ASR, TTS, S2T, MT, SpokenLID  
-   - **Description:** Interviews and spontaneous dialogues from various YouTube playlists. Informal speech with occasional overlapping, hesitations, and background noise. Fully transcribed and translated.
+<p align="center">
+  <img src="images/subset_stats.JPG" alt="Subsets" width="600"> 
+</p>
 
-3. **Skeealyn Vannin** (Stories of Mann)  
-   - **Style:** Conversation/interview  
-   - **Variety:** Traditional  
-   - **Total Duration:** 3.60 hours (train_unaligned), 0.17 hours (test)  
-   - **English Translations:** Yes  
-   - **Eval Use Cases:** ASR, TTS, MT, SpokenLID  
-   - **Description:** Historical interviews from 1948 featuring native speakers. Audio quality varies due to archival recording methods. Contains speaker overlap and some English. Transcriptions are currently being cleaned and digitized.
+## Licensing and Metadata
 
-4. **Ynsaghey** (Learn)  
-   - **Style:** Read-speech  
-   - **Variety:** Revived  
-   - **Total Duration:** 5.53 hours (train_unaligned), 0.28 hours (test)  
-   - **English Translations:** Yes 
-   - **Eval Use Cases:** ASR, TTS, S2T (Subset), MT (Subset), SpokenLID  
-   - **Description:** A mix of instructional content, including vocabulary lists, cultural materials, and spoken dictionaries. Audio is clear and focused on learner-friendly articulation. Most is transcribed and translated.
+See `recordings_metadata.csv` for file-level details. All material is sourced from publicly available content. We aim to respect all original rights and licensing agreements.
 
-5. **Abbyr** (Say)  
-   - **Style:** Spoken dictionary  
-   - **Variety:** Revived  
-   - **Total Duration:** 0.53 hours (train_unaligned), 1.18 hours (train_spkn_dict)  
-   - **English Translations:** Yes  
-   - **Eval Use Cases:** ASR, TTS, SpokenLID  
-   - **Description:** A spoken dictionary derived from educational resources on LearnManx.com. Short utterances with clear pronunciation, typically consisting of isolated words or phrases. Ideal for modeling pronunciation and phoneme-level alignment.
+## Accessing the Data
 
+Transcripts and metadata are available in this repository. Due to file size, audio is not hosted here. Please contact the maintainer for access:
 
+📧 **csjbartley1@sheffield.ac.uk**
 
-## Licensing and Source Information
+## Contributions Welcome
 
-Please see recordings_metadata.csv for information regarding each source file. All data in this repository has been sourced from publicly available sources, however we strive to respect original content creators and maintain any licensing conditions.
+Areas where contributions would be particularly valuable:
 
-## How to Use These Sets
+- **Additional Manx recordings** (labelled or unlabelled)
+- **Corrections** to transcripts or metadata
+- **Benchmarking**: Share results using this dataset
 
-Clone or download this repository to access descriptions and transcripts. The audio files are too large to be hosted directly in this repository, so please contact me personally if you would like access to the recordings.
-
-## Areas for Improvement
-
-This repository is a work in progress. Here are some areas where contributions would be especially valuable:
-
-* Additional Resources: Contributions of Manx text or audio recordings. Speech transcription data is preferable but unlabelled data can also prove useful.
-* Correcting Errors: Whilst every effort had been made to ensure that language data is correct, some errors may persist.
-* Testing and Feedback: Testing various models against these datasets for continuous improvement, of the models themselves but also of these data.
-
-**Contributions**
-
-We welcome contributions to improve this repository. If you have new resources, corrections, or suggestions, please feel free to submit a pull request or contact me directly at csjbartley1@sheffield.ac.uk.
+Feel free to open a pull request or contact the maintainer to collaborate.
