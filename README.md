@@ -7,7 +7,7 @@ Loayr is a dataset of Manx Gaelic speech recordings, transcriptions and, where a
 Manx language resources are extremely rare compared to most languages, which makes building language technologies challenging. These evaluation sets provide essential benchmarks to consistently measure and enhance the performance of various language technologies. They can be used for:
 
 - **Testing Automatic Speech Recognition (ASR):**  
-  Assess and refine tools that convert spoken Manx into written text.
+  Assess and refine tools that convert spoken Manx into written text. Useful for transcription projects.
 
 - **Improving Text-to-Speech (TTS):**  
   Develop natural, fluent Manx voices, making the language more accessible.
@@ -19,16 +19,16 @@ Manx language resources are extremely rare compared to most languages, which mak
   Teach systems to recognise Manx, even in mixed-language audio.
 
 ## Statistics
-Loayr consists of around 20 hours of speech-text data, organised in three subsets. These are:
+Loayr-v2 now consists of around 15 hours of speech-text data, organised in three subsets. These are:
 
-1. **train_unaligned** 
-   - **Description:** Long form audio files. These will eventually be segmented into smaller sentence/utterance like units once the audio can be recognised and transcribed automatically.
+1. **train** 
+   - **Description:** Short utterances (3-5 seconds) designed to train ASR systems. This set has been segmented automatically and so may contain errors stemming from this process.
 
-2. **train_spkn_dict**  
-   - **Description:** Pre-aligned short utterances from a spoken dictionary. Designed as a short training set to teach various models how to recognise Manx.
+2. **Dev**  
+   - **Description:** Smaller set of short utterances (3-5 seconds) designed to evaluate the ASR training process. This set has been segmented automatically and so may contain errors stemming from this process.
 
 3. **test**  
-   - **Description:** a one-hour test set proportionally sampled from train_unaligned and manually segmented. Contains 'ground-truth' examples designed to test the capabilities of various models.
+   - **Description:** A one-hour test set proportionally sampled from the training set and manually segmented to ensure accuracy. Contains 'ground-truth' examples designed to test the capabilities of various models.
 
 <p align="center">
   <img src="images/stats.JPG" alt="Loayr overview" width="600">
@@ -82,7 +82,7 @@ The evaluation data is organized into five primary sets, each reflecting a disti
 
 ## Licensing and Source Information
 
-Please see metadata.csv for information regarding each file. All data in this repository has been sourced from publicly available sources, however we strive to respect original content creators and maintain any licensing conditions.
+Please see recordings_metadata.csv for information regarding each source file. All data in this repository has been sourced from publicly available sources, however we strive to respect original content creators and maintain any licensing conditions.
 
 ## How to Use These Sets
 
