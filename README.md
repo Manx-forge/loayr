@@ -1,3 +1,5 @@
+> **This repository has moved.** It is now part of [Manx-forge/manx-speech-corpus](https://github.com/Manx-forge/manx-speech-corpus/tree/main/loayr), with its full history. This copy is archived and no longer updated.
+
 # Loayr: The First Segmented Speech Transcription Dataset for the Manx Language
 
 Loayr is a dataset of Manx Gaelic speech recordings, transcriptions, and, where available, English translations. It is designed to support research and development in Manx language technologies.
